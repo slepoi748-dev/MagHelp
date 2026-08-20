@@ -1,0 +1,41 @@
+## Спецификация проекта для XcodeGen.
+## Позволяет собрать приложение без ручного создания проекта в Xcode.
+## Локально:  brew install xcodegen && xcodegen generate
+## В облаке:  собирается автоматически через GitHub Actions (см. .github/workflows)
+
+name: MagicHub
+options:
+  bundleIdPrefix: ru.magic
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    MARKETING_VERSION: "0.3"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.9"
+    TARGETED_DEVICE_FAMILY: "1"
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Manual
+    CODE_SIGN_IDENTITY: ""
+    CODE_SIGNING_REQUIRED: "NO"
+    CODE_SIGNING_ALLOWED: "NO"
+
+targets:
+  MagicHub:
+    type: application
+    platform: iOS
+    sources:
+      - path: MagicHub
+        excludes:
+          - "Info.plist"
+      - path: MagicHub/WebApps
+        type: folder          # web-приложения кладём как папку целиком
+    info:
+      path: MagicHub/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: ru.magic.hub
+        INFOPLIST_FILE: MagicHub/Info.plist
+        ENABLE_BITCODE: "NO"

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDisplayName</key>
+    <string>Magic</string>
+    <key>CFBundleName</key>
+    <string>Magic</string>
+    <key>CFBundleIdentifier</key>
+    <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+    <key>CFBundleShortVersionString</key>
+    <string>0.3</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+
+    <!-- РАЗРЕШЕНИЯ BLUETOOTH: без них iOS не даст доступ к пульту и устройствам -->
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>Приложению нужен Bluetooth для связи с пультом и устройствами Magic.</string>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>Приложению нужен Bluetooth для связи с пультом и устройствами Magic.</string>
+
+    <!-- ФОНОВЫЙ РЕЖИМ: пульт продолжает работать при свёрнутом приложении.
+         ВАЖНО: в фоне события BLE приходят с задержкой — для сцены держите
+         приложение открытым. -->
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>bluetooth-central</string>
+    </array>
+
+    <!-- Загрузка web-приложений по http для локальной разработки -->
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+    </dict>
+
+    <key>UILaunchScreen</key>
+    <dict>
+        <key>UIColorName</key>
+        <string></string>
+    </dict>
+
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+    </array>
+
+    <key>UIUserInterfaceStyle</key>
+    <string>Dark</string>
+
+    <key>UIApplicationSceneManifest</key>
+    <dict>
+        <key>UIApplicationSupportsMultipleScenes</key>
+        <false/>
+    </dict>
+</dict>
+</plist>

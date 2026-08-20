@@ -1,0 +1,32 @@
+{
+  "app_id": "notes",
+  "name": "Magic Notes",
+  "url": "https://slepoi748-dev.github.io/MagHelp/notes/",
+  "icon": "note.text",
+  "color": "#4C8DFF",
+  "protocol_version": 2,
+  "author": "Magic Ecosystem",
+  "commands": ["UP", "DOWN", "SELECT", "BACK", "RESET"],
+  "contexts": [
+    {
+      "mode": "list",
+      "title": "Список заметок",
+      "buttons": { "1": "UP", "2": "DOWN", "3": "SELECT", "4": "BACK" }
+    },
+    {
+      "mode": "view",
+      "title": "Просмотр",
+      "buttons": { "1": "PREV_WORD", "2": "NEXT_WORD", "3": "RESTART", "4": "BACK" }
+    },
+    {
+      "mode": "predict",
+      "title": "Предсказание",
+      "buttons": { "1": "INC", "2": "DEC", "3": "LOCK", "4": "BACK" }
+    }
+  ],
+  "gestures": {
+    "long4": "HOME",
+    "combo14": "RESET",
+    "double3": "PREDICT"
+  }
+}
